@@ -1,0 +1,28 @@
+info:
+  name: register-newuser
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/end-user/new-user"
+  headers:
+    - name: API-key
+      value: qOzvjJQb7Ec73pC-Xm8LxtQKuN_E7wM0e4CjVfbDxtE
+  body:
+    type: json
+    data: |2-
+         { 
+           "email":"user56@test.com",
+           "name":"WindChanter",
+           "plain_password":"user1"
+         }
+  auth:
+    type: bearer
+    token: qOzvjJQb7Ec73pC-Xm8LxtQKuN_E7wM0e4CjVfbDxtE
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
