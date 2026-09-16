@@ -25,7 +25,7 @@ async def lifecycle(app:FastAPI):
 app = FastAPI(title="Auth System", lifespan=lifecycle)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5500/frontend.html"],
+    allow_origins=["http://127.0.0.1:5500/frontend.html", "*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
