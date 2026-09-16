@@ -23,11 +23,13 @@ async def lifecycle(app:FastAPI):
 
 
 app = FastAPI(title="Auth System", lifespan=lifecycle)
-app.add_middleware(CORSMiddleware,
-                   allow_credentials=True,
-                   allow_origins=["*"],
-                   allow_headers=["*"],
-                   allow_methods=["*"])
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://127.0.0.1:5500/frontend.html"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.include_router(developer_router)
 app.include_router(project_router)
 app.include_router(end_user_router)
